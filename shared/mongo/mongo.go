@@ -12,6 +12,10 @@ const (
 
 var NewObjID = primitive.NewObjectID
 
+type IDField struct {
+	ID primitive.ObjectID `bson:"_id"`
+}
+
 func SetOnInsert(v interface{}) bson.M {
 	return bson.M{
 		"$setOnInsert": v,
